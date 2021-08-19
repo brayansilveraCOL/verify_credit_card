@@ -7,7 +7,7 @@ from rest_framework import serializers
 
 class CreditCardSerializer(serializers.Serializer):
     creditCard = serializers.CharField(max_length=19)
-    typeCreditCard = serializers.CharField(required=False, max_length=250)
+    typeCreditCard = serializers.CharField(required=False, max_length=250, read_only=True)
 
     def validate(self, attrs):
         response = validate_credit_Card(attrs['creditCard'])
