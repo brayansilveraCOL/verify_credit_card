@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from verify_credit_card.api.views.verify import api_view_verify_credit_card
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('verify/', api_view_verify_credit_card, name="verify")
 ]
